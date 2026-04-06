@@ -1,5 +1,4 @@
-Pregunta
-Problema 1 — Turismo y Hotelería
+
 El Problema
 
 Recibes un DataFrame de pandas con registros de ocupación hotelera diaria en un destino turístico. Cada fila representa la ocupación registrada en una fecha específica. Tu objetivo es transformar estos datos para generar variables temporales útiles en análisis de demanda turística y series de tiempo.
