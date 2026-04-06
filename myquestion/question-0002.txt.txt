@@ -1,0 +1,21 @@
+El Problema
+
+Recibes un DataFrame de pandas con fragmentos de sentencias judiciales.
+
+El DataFrame contiene la siguiente columna:
+
+texto: fragmento de texto jurídico
+Tu Misión
+
+Escribe una función llamada:
+
+def vectorizar_sentencias(df):
+
+que realice lo siguiente:
+
+Extraiga la columna texto
+Aplique TfidfVectorizer
+Transforme los textos en una matriz numérica
+Devuelva:
+la matriz TF-IDF como un array de numpy
+la lista de palabras del vocabulario

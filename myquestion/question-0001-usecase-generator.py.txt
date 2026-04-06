@@ -1,0 +1,47 @@
+import pandas as pd
+import numpy as np
+import random
+
+def generar_caso_de_uso_crear_features_ocupacion():
+    # 1. Configuración aleatoria
+    n_rows = random.randint(6, 12)
+
+    # 2. Generar datos
+    fechas = pd.date_range("2024-01-01", periods=n_rows, freq="D")
+    ocupaciones = np.random.randint(40, 101, size=n_rows)
+
+    df = pd.DataFrame({
+        "fecha": fechas.astype(str),
+        "ocupacion": ocupaciones
+    })
+
+    # Desordenar los datos (para probar que la función sepa ordenar)
+    df = df.sample(frac=1).reset_index(drop=True)
+
+    input_data = {
+        "df": df.copy()
+    }
+
+    # 3. Lógica del Output Esperado
+    df_expected = df.copy()
+    df_expected["fecha"] = pd.to_datetime(df_expected["fecha"])
+    df_expected = df_expected.sort_values("fecha").reset_index(drop=True)
+    df_expected["dia_semana"] = df_expected["fecha"].dt.dayofweek
+    df_expected["lag_1"] = df_expected["ocupacion"].shift(1)
+    df_expected["rolling_mean_3"] = df_expected["ocupacion"].rolling(3).mean()
+    df_expected = df_expected.dropna().reset_index(drop=True)
+
+    output_data = df_expected
+
+    # 4. IMPRESIÓN (Esto es lo que querías ver)
+    print("=== INPUT GENERADO ===")
+    print(input_data["df"])
+
+    print("\n=== OUTPUT ESPERADO ===")
+    print(output_data)
+
+    return input_data, output_data
+
+# --- LA PIEZA QUE FALTABA: EJECUTAR LA FUNCIÓN ---
+if __name__ == "__main__":
+    generar_caso_de_uso_crear_features_ocupacion()
