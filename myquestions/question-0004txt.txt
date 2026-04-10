@@ -1,0 +1,27 @@
+El Problema
+
+Recibes un DataFrame de pandas con resultados de cuestionarios psicológicos. Cada fila representa una persona y sus puntajes en distintas variables. Tu objetivo es predecir si una persona presenta riesgo psicológico.
+
+El DataFrame contiene las siguientes columnas:
+
+estres
+ansiedad
+horas_sueno
+actividad_fisica
+riesgo
+
+La columna riesgo es la variable objetivo y toma valores 0 o 1.
+
+Tu Misión
+
+Escribe una función llamada:
+
+def clasificar_riesgo_psicologico(df, target_col):
+
+que realice lo siguiente:
+
+Separe las características X de la variable objetivo y.
+Divida los datos con train_test_split(test_size=0.3, random_state=42).
+Entrene un modelo LogisticRegression(max_iter=200).
+Calcule el f1_score sobre el conjunto de prueba.
+Devuelva ese valor como un float.

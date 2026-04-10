@@ -1,0 +1,25 @@
+Pregunta
+Problema 1 — Turismo y Hotelería
+El Problema
+
+Recibes un DataFrame de pandas con registros de ocupación hotelera diaria en un destino turístico. Cada fila representa la ocupación registrada en una fecha específica. Tu objetivo es transformar estos datos para generar variables temporales útiles en análisis de demanda turística y series de tiempo.
+
+El DataFrame contiene las siguientes columnas:
+
+fecha: fecha del registro
+ocupacion: valor numérico de ocupación hotelera
+Tu Misión
+
+Escribe una función llamada:
+
+def crear_features_ocupacion(df):
+
+que realice lo siguiente:
+
+Convierta la columna fecha a tipo datetime.
+Ordene el DataFrame por la columna fecha de forma ascendente.
+Cree una columna dia_semana con valores entre 0 y 6.
+Cree una columna lag_1 con la ocupación del día anterior.
+Cree una columna rolling_mean_3 con la media móvil de 3 días de ocupacion.
+Elimine las filas con valores faltantes generados por estas transformaciones.
+Devuelva el DataFrame transformado.

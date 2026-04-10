@@ -1,0 +1,22 @@
+El Problema
+
+Recibes un DataFrame de pandas con estadísticas de jugadores de fútbol profesional. Cada fila representa un jugador y sus métricas de rendimiento. Tu objetivo es agrupar a los jugadores según su estilo de juego.
+
+El DataFrame contiene las siguientes columnas:
+
+goles
+asistencias
+pases_clave
+recuperaciones
+Tu Misión
+
+Escribe una función llamada:
+
+def agrupar_jugadores(df, n_clusters):
+
+que realice lo siguiente:
+
+Seleccione las columnas numéricas del DataFrame.
+Escale los datos usando StandardScaler.
+Aplique KMeans con n_clusters=n_clusters y random_state=42.
+Devuelva un array de numpy con las etiquetas de cluster asignadas a cada jugador.
