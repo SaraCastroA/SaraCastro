@@ -1,14 +1,8 @@
-import pandas as pd
-import numpy as np
-
 from sklearn.preprocessing import OrdinalEncoder, MinMaxScaler
 from sklearn.feature_selection import SelectKBest, f_classif
 
 
-def solution(df,
-             target_col,
-             categorias_ordinales,
-             k):
+def preparar_datos(df, target_col, categorias_ordinales, k):
 
     X = df.drop(columns=[target_col]).copy()
 
