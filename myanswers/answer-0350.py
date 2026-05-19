@@ -10,7 +10,6 @@ def preparar_datos(df=None,
                     categorias_ordinales=None,
                     k=None):
 
-    # Protección para validadores que llaman la función vacía
     if df is None:
         return None
 
