@@ -5,7 +5,10 @@ from sklearn.preprocessing import OrdinalEncoder, MinMaxScaler
 from sklearn.feature_selection import SelectKBest, f_classif
 
 
-def preparar_datos(df, target_col, categorias_ordinales, k):
+def preparar_datos(df,
+                    target_col,
+                    categorias_ordinales,
+                    k):
 
     X = df.drop(columns=[target_col]).copy()
 
@@ -38,3 +41,7 @@ def preparar_datos(df, target_col, categorias_ordinales, k):
     X_final = scaler.fit_transform(X_selected)
 
     return X_final, y
+
+
+def solution(**kwargs):
+    return preparar_datos(**kwargs)
