@@ -1,0 +1,20 @@
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import IsolationForest
+
+
+def detectar_anomalias_transacciones(X):
+
+    scaler = StandardScaler()
+
+    X_scaled = scaler.fit_transform(X)
+
+    modelo = IsolationForest(
+        contamination=0.05,
+        random_state=42
+    )
+
+    modelo.fit(X_scaled)
+
+    predicciones = modelo.predict(X_scaled)
+
+    return predicciones
